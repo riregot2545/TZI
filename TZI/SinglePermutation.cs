@@ -33,6 +33,20 @@ namespace TZI
             setKey(_key.Split(' '));
         }
 
-
+        public string Encrypt(string input)
+        {
+            for (int i = 0; i < input.Length % key.Length; i++)
+                input += input[i];
+            string res = "";
+            for(int i = 0; i < input.Length; i += key.Length)
+            {
+                char[] permutation = new char[key.Length];
+                for (int j = 0; j < key.Length; j++)
+                    permutation[key[j] - 1] = input[i + j];
+                for (int j = 0; j < key.Length; j++)
+                    res += permutation[j];
+            }
+            return res;
+        }
     }
 }
