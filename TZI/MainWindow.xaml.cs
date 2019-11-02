@@ -23,6 +23,7 @@ namespace TZI
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigate(new SinglePermutation());
         }
     }
 }

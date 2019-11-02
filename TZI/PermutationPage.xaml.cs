@@ -24,5 +24,17 @@ namespace TZI
         {
             InitializeComponent();
         }
+
+        private void Crypt_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            SinglePermutation singlePermutation = new SinglePermutation();
+            singlePermutation.setKey(Key_Tb.Text);
+            if (Encrypt_Rbtn.IsChecked == true)
+                Output_Tb.Text = singlePermutation.Encrypt(Input_Tb.Text);
+            else if (Decrypt_Rbtn.IsChecked == true)
+                Output_Tb.Text = singlePermutation.Decrypt(Input_Tb.Text);
+            else
+                MessageBox.Show("Выберите расшифрование или зашифрование");
+        }
     }
 }

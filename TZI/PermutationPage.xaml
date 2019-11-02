@@ -13,11 +13,11 @@
         <Label Content="Обработанный текст:" HorizontalAlignment="Left" Margin="538,50,0,0" VerticalAlignment="Top" FontSize="18px"/>
         <TextBox x:Name="Input_Tb" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="150" Margin="73,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" FontSize="18px"/>
         <TextBox x:Name="Output_Tb" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="150" Margin="472,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" FontSize="18px"/>
-        <RadioButton x:Name="Encrypt_Rbtn" Content="Зашифровать" HorizontalAlignment="Left" Margin="557,284,0,0" VerticalAlignment="Top" FontSize="18px" GroupName="Cyper"/>
+        <RadioButton x:Name="Encrypt_Rbtn" Content="Зашифровать" HorizontalAlignment="Left" Margin="557,284,0,0" VerticalAlignment="Top" FontSize="18px" GroupName="Cyper" IsChecked="True"/>
         <RadioButton x:Name="Decrypt_Rbtn" Content="Расшифровать" HorizontalAlignment="Left" Margin="557,332,0,0" VerticalAlignment="Top" FontSize="18px" GroupName="Cyper"/>
         <Label Content="Ключ:" HorizontalAlignment="Left" Margin="396,386,0,0" VerticalAlignment="Top" FontSize="18px"/>
         <TextBox x:Name="Key_Tb" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="23" Margin="472,390,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="225" FontSize="18px"/>
-        <Button x:Name="Crypt_Btn" Content="Выполнить" HorizontalAlignment="Left" Margin="92,332,0,0" VerticalAlignment="Top" Width="144" FontSize="26px" Height="65"/>
+        <Button x:Name="Crypt_Btn" Content="Выполнить" HorizontalAlignment="Left" Margin="92,332,0,0" VerticalAlignment="Top" Width="144" FontSize="26px" Height="65" Click="Crypt_Btn_Click"/>
 
     </Grid>
 </Page>
