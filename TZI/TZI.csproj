@@ -58,7 +58,11 @@
     <Compile Include="PermutationPage.xaml.cs">
       <DependentUpon>PermutationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ReplacementPage.xaml.cs">
+      <DependentUpon>ReplacementPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SinglePermutation.cs" />
+    <Compile Include="Vishener.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -74,6 +78,10 @@
     <Page Include="PermutationPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ReplacementPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

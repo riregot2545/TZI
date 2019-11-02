@@ -16,24 +16,24 @@ using System.Windows.Shapes;
 namespace TZI
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для ReplacementPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ReplacementPage : Page
     {
-        public MainWindow()
+        Vishener Vishener = new Vishener();
+        public ReplacementPage()
         {
             InitializeComponent();
-            MainFrame.Navigate(new ReplacementPage());
         }
 
-        private void PerestanovkaBtn_Click(object sender, RoutedEventArgs e)
+        private void InvokeBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (inputTxtBox.Text.Length != 0 &&
+                outputTxtBox.Text.Length!=0 &&
+                keyTxtBox.Text.Length != 0)
+            {
 
-        }
-
-        private void VishenerBtn_Click(object sender, RoutedEventArgs e)
-        {
-
+            }
         }
     }
 }
