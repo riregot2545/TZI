@@ -23,7 +23,17 @@ namespace TZI
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new SinglePermutation());
+            MainFrame.Navigate(new PermutationPage());
+        }
+
+        private void PerestanovkaBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void VishenerBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

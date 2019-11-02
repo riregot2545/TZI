@@ -63,12 +63,12 @@
                     </Setter>
                 </Style>
             </StackPanel.Resources>
-            <Button Click="VishenerBtn">
+            <Button Click="VishenerBtn_Click">
                 <Button.Content>
                     <TextBlock Text="Віженера" />
                 </Button.Content>
             </Button>
-            <Button Click="PerestanovkaBtn">
+            <Button Click="PerestanovkaBtn_Click">
                 <Button.Content>
                     <TextBlock Text="Однар. перестановки"/>
                 </Button.Content>
