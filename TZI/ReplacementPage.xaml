@@ -40,7 +40,7 @@
             <TextBox Name="outputTxtBox" TextWrapping="WrapWithOverflow" Margin="5 5 5 0" Height="234"/>
         </StackPanel>
         <DockPanel Grid.Column="1" Grid.Row="0">
-            <Button Name="swapBtn" MaxHeight="50" Content="&lt;=&gt;"/>
+            <Button Name="swapBtn" Click="SwapBtn_Click" MaxHeight="50" Content="&lt;=&gt;"/>
         </DockPanel>
         <StackPanel Grid.Column="0" Grid.Row="1">
             <Label Content="Ключ:"/>

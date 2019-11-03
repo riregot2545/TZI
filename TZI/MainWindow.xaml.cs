@@ -28,12 +28,12 @@ namespace TZI
 
         private void PerestanovkaBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrame.Navigate(new ReplacementPage());
         }
 
         private void VishenerBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrame.Navigate(new PermutationPage());
         }
     }
 }

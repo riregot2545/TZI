@@ -28,12 +28,23 @@ namespace TZI
 
         private void InvokeBtn_Click(object sender, RoutedEventArgs e)
         {
+            
             if (inputTxtBox.Text.Length != 0 &&
-                outputTxtBox.Text.Length!=0 &&
                 keyTxtBox.Text.Length != 0)
             {
-
+                string output;
+                if (codeTypeRDBtn.IsChecked.Value)
+                    output = Vishener.Encode(inputTxtBox.Text, keyTxtBox.Text);
+                else
+                    output = Vishener.Decode(inputTxtBox.Text, keyTxtBox.Text);
+                outputTxtBox.Text = output;
             }
+        }
+
+        private void SwapBtn_Click(object sender, RoutedEventArgs e)
+        { 
+            inputTxtBox.Text = outputTxtBox.Text;
+            outputTxtBox.Text = "";
         }
     }
 }
