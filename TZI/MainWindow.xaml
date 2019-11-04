@@ -63,16 +63,9 @@
                     </Setter>
                 </Style>
             </StackPanel.Resources>
-            <Button Click="VishenerBtn_Click">
-                <Button.Content>
-                    <TextBlock Text="Віженера" />
-                </Button.Content>
-            </Button>
-            <Button Click="PerestanovkaBtn_Click">
-                <Button.Content>
-                    <TextBlock Text="Однар. перестановки"/>
-                </Button.Content>
-            </Button>
+            <ComboBox x:Name="Navi_Cmb" SelectionChanged="Navi_Cmb_SelectionChanged">
+                <ComboBox.FontSize>18</ComboBox.FontSize>
+            </ComboBox>
         </StackPanel>
     </Grid>
 </Window>

@@ -20,20 +20,30 @@ namespace TZI
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<string> listNavigate;
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new ReplacementPage());
+            listNavigate = new List<string> { "Виженер", "Перестановка" };
+            Navi_Cmb.ItemsSource = listNavigate;
+            Navi_Cmb.SelectedIndex = 0;
+            //MainFrame.Navigate(new ReplacementPage());
         }
 
-        private void PerestanovkaBtn_Click(object sender, RoutedEventArgs e)
+        private void Navi_Cmb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MainFrame.Navigate(new ReplacementPage());
-        }
-
-        private void VishenerBtn_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Navigate(new PermutationPage());
+            switch (Navi_Cmb.SelectedIndex)
+            {
+                case 0:
+                    MainFrame.Navigate(new ReplacementPage());
+                    break;
+                case 1:
+                    MainFrame.Navigate(new PermutationPage());
+                    break;
+                default:
+                    MainFrame.Navigate(new ReplacementPage());
+                    break;
+            }
         }
     }
 }
