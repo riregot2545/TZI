@@ -64,7 +64,7 @@
                 </Style>
             </StackPanel.Resources>
             <ComboBox x:Name="Navi_Cmb" SelectionChanged="Navi_Cmb_SelectionChanged">
-                <ComboBox.FontSize>18</ComboBox.FontSize>
+                <ComboBox.FontSize>16</ComboBox.FontSize>
             </ComboBox>
         </StackPanel>
     </Grid>

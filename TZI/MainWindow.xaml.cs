@@ -24,7 +24,7 @@ namespace TZI
         public MainWindow()
         {
             InitializeComponent();
-            listNavigate = new List<string> { "Виженер", "Перестановка" };
+            listNavigate = new List<string> { "Виженер", "Перестановка","Сумма по модулю 26" };
             Navi_Cmb.ItemsSource = listNavigate;
             Navi_Cmb.SelectedIndex = 0;
             //MainFrame.Navigate(new ReplacementPage());
@@ -39,6 +39,9 @@ namespace TZI
                     break;
                 case 1:
                     MainFrame.Navigate(new PermutationPage());
+                    break;
+                case 2:
+                    MainFrame.Navigate(new GamuvannaPage());
                     break;
                 default:
                     MainFrame.Navigate(new ReplacementPage());
