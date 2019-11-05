@@ -8,7 +8,7 @@ namespace TZI
 {
     class ModueSum
     {
-        private static string alphabetLatin = "qwertyuiopasdfghjklzxcvbnm";
+        private static string alphabetLatin = "qwertyuiopasdfghjklzxcvbnm ";
         private string alphabetCommon = "12345689.,!?\"\'— ";
        
         private string alphabet;
@@ -46,7 +46,7 @@ namespace TZI
 
             for (int i = 0; i < input.Length; i++)
             {
-                builder.Append(alphabet[(alphabet.IndexOf(input[i])+ alphabet.IndexOf(key[i]))%26
+                builder.Append(alphabet[(alphabet.IndexOf(input[i])+ alphabet.IndexOf(key[i]))%27
                     ]
                     );
             }
@@ -63,7 +63,7 @@ namespace TZI
 
             for (int i = 0; i < input.Length; i++)
             {
-                builder.Append(alphabet[(alphabet.IndexOf(input[i]) + 26 - alphabet.IndexOf(key[i])) % 26
+                builder.Append(alphabet[(alphabet.IndexOf(input[i]) + 27 - alphabet.IndexOf(key[i])) % 27
                     ]
                     );
             }
