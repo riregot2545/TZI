@@ -10,7 +10,7 @@ namespace TZI
     {
         private string alphabetLatin = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
         private string alphabetCommon = "12345689.,!?\"\'«»— ";
-        private string aplhabetRussian = "йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ";
+        private string aplhabetRussian = "йцукенгшщзхъфывапролджэячсмитьбюёЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮЁ";
         private Dictionary<char, char[]> codeMatrix;
 
         private string alphabet;

@@ -33,6 +33,7 @@ namespace TZI
             {
                 builder.Append(alphabetLatin[random.Next(alphabetLatin.Length)]);
             }
+
             return builder.ToString();
         }
 

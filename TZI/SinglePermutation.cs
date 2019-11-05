@@ -36,7 +36,9 @@ namespace TZI
         public string Encrypt(string input)
         {
             for (int i = 0; i < input.Length % key.Length; i++)
-                input += input[i];
+                input += "Я";
+            if (key.Length > input.Length)
+                Array.Resize(ref key, input.Length);
             string res = "";
             for(int i = 0; i < input.Length; i += key.Length)
             {
