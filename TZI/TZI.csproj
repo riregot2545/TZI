@@ -58,6 +58,8 @@
     <Compile Include="DataCompressingPage.xaml.cs">
       <DependentUpon>DataCompressingPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CipherDSE.cs" />
+    <Compile Include="CipherRSA.cs" />
     <Compile Include="GamuvannaPage.xaml.cs">
       <DependentUpon>GamuvannaPage.xaml</DependentUpon>
     </Compile>
