@@ -58,6 +58,10 @@
     <Compile Include="GamuvannaPage.xaml.cs">
       <DependentUpon>GamuvannaPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IntegrityСheck.xaml.cs">
+      <DependentUpon>IntegrityСheck.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LunSimple.cs" />
     <Compile Include="ModueSum.cs" />
     <Compile Include="PermutationPage.xaml.cs">
       <DependentUpon>PermutationPage.xaml</DependentUpon>
@@ -68,6 +72,10 @@
     <Compile Include="SinglePermutation.cs" />
     <Compile Include="Vishener.cs" />
     <Page Include="GamuvannaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IntegrityСheck.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
