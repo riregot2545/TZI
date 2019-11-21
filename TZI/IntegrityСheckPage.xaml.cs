@@ -18,10 +18,10 @@ namespace TZI
     /// <summary>
     /// Логика взаимодействия для IntegrityСheck.xaml
     /// </summary>
-    public partial class IntegrityСheck : Page
+    public partial class IntegrityСheckPage : Page
     {
         LunSimple Lun = new LunSimple();
-        public IntegrityСheck()
+        public IntegrityСheckPage()
         {
             InitializeComponent();
 
@@ -35,7 +35,7 @@ namespace TZI
             {
                 if (!isOnlyDigit(inputTxtBox.Text))
                 {
-                    MessageBox.Show("Введите исключительно числовые данные");
+                    MessageBox.Show("Введите исключительно числовые данные с возможными пробелами");
                     return;
                 }
                 if (Lun.Check(inputTxtBox.Text))

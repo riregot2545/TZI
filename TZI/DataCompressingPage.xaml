@@ -1,0 +1,71 @@
+﻿<Page x:Class="TZI.DataCompressingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TZI"
+      mc:Ignorable="d" 
+      Width="597.392" Height="400.947" 
+      Background="Khaki"
+      Title="DataCompressingPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.Resources>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="15"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+            <Style TargetType="RadioButton">
+                <Setter Property="FontSize" Value="13"/>
+            </Style>
+        </Grid.Resources>
+        <StackPanel Grid.Column="0" Grid.Row="0">
+            <Label Content="Input:"/>
+            <TextBox Name="inputTxtBox" TextWrapping="WrapWithOverflow" Margin="5 5 5 0" Height="250"/>
+            <StackPanel Orientation="Horizontal">
+                <Label>Количество символов:</Label>
+                <TextBox Name="inputSymbolsNumTxtBox" Width="50" Height="20" HorizontalContentAlignment="Center" IsReadOnly="True"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Grid.Row="0">
+            <Label Content="Output:"/>
+            <TextBox Name="outputTxtBox" TextWrapping="WrapWithOverflow" Margin="5 5 5 0" Height="250"/>
+            <StackPanel Orientation="Horizontal">
+                <Label>Количество символов:</Label>
+                <TextBox Name="outputSymbolsNumTxtBox"  Width="50" Height="20" HorizontalContentAlignment="Center" IsReadOnly="True"/>
+            </StackPanel>
+        </StackPanel>
+        <DockPanel Grid.Column="1" Grid.Row="0">
+            <Button Name="swapBtn" Click="SwapBtn_Click" MaxHeight="50" Content="&lt;=&gt;"/>
+        </DockPanel>
+        
+        <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+            <Label Content="Выполнить:"/>
+            <RadioButton Name="codeTypeRDBtn" Content="компрессию" IsChecked="True"/>
+            <RadioButton Content="декомпрессию"/>
+        </StackPanel>
+        <DockPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1">
+            <StackPanel VerticalAlignment="Top" Margin="5 5 5 5">
+                <StackPanel Orientation="Horizontal">
+                    <Label>Коэффициент сжатия:</Label>
+                    <TextBox Name="compressCoefTxtBox" Width="50" Height="20" HorizontalContentAlignment="Center" IsReadOnly="True"/>
+                </StackPanel>
+                <Button Click="InvokeBtn_Click" DockPanel.Dock="Bottom" MinHeight="40" MinWidth="80" Content="Выполнить"/>
+            </StackPanel>
+        </DockPanel>
+
+    </Grid>
+</Page>

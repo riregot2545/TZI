@@ -55,11 +55,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DataCompressingPage.xaml.cs">
+      <DependentUpon>DataCompressingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GamuvannaPage.xaml.cs">
       <DependentUpon>GamuvannaPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IntegrityСheck.xaml.cs">
-      <DependentUpon>IntegrityСheck.xaml</DependentUpon>
+    <Compile Include="IntegrityСheckPage.xaml.cs">
+      <DependentUpon>IntegrityСheckPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="LunSimple.cs" />
     <Compile Include="ModueSum.cs" />
@@ -69,13 +72,18 @@
     <Compile Include="ReplacementPage.xaml.cs">
       <DependentUpon>ReplacementPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RLECoder.cs" />
     <Compile Include="SinglePermutation.cs" />
     <Compile Include="Vishener.cs" />
+    <Page Include="DataCompressingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GamuvannaPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IntegrityСheck.xaml">
+    <Page Include="IntegrityСheckPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
