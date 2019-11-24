@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TZI
 {
-    class CipherDSE
+    class CipherDES
     {
-        private const int sizeOfBlock = 128; //в DES размер блока 64 бит, но поскольку в unicode символ в два раза длинее, то увеличим блок тоже в два раза
+        private const int sizeOfBlock = 32; //в DES размер блока 64 бит, но поскольку в unicode символ в два раза длинее, то увеличим блок тоже в два раза
         private const int sizeOfChar = 16; //размер одного символа (in Unicode 16 bit)
 
         private const int shiftKey = 2; //сдвиг ключа 
@@ -169,7 +169,7 @@ namespace TZI
             return output;
         }
 
-        private string[] Encrypt(string input, string _key)
+        public string[] Encrypt(string input, string _key)
         {
             string[] returnedText = new string[2];
 
@@ -194,19 +194,19 @@ namespace TZI
 
             key = KeyToPrevRound(key);
 
-            returnedText[1] = StringFromBinaryToNormalFormat(key);
+            returnedText[0] = StringFromBinaryToNormalFormat(key);
 
             string result = "";
 
             for (int i = 0; i < Blocks.Length; i++)
                 result += Blocks[i];
 
-            returnedText[2] = StringFromBinaryToNormalFormat(result);
+            returnedText[1] = StringFromBinaryToNormalFormat(result);
 
             return returnedText;
         }
 
-        private string[] Decrypt(string input, string _key)
+        public string[] Decrypt(string input, string _key)
         {
             string[] returnedText = new string[2];
 
@@ -228,14 +228,14 @@ namespace TZI
 
             key = KeyToNextRound(key);
 
-            returnedText[1] = StringFromBinaryToNormalFormat(key);
+            returnedText[0] = StringFromBinaryToNormalFormat(key);
 
             string result = "";
 
             for (int i = 0; i < Blocks.Length; i++)
                 result += Blocks[i];
 
-            returnedText[2] = StringFromBinaryToNormalFormat(result);
+            returnedText[1] = StringFromBinaryToNormalFormat(result);
 
             return returnedText;
         }

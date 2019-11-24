@@ -16,16 +16,16 @@ using System.Windows.Shapes;
 namespace TZI
 {
     /// <summary>
-    /// Логика взаимодействия для PermutationPage.xaml
+    /// Логика взаимодействия для dESPage.xaml
     /// </summary>
-    public partial class PermutationPage : Page
+    public partial class DESPage : Page
     {
 
-        SinglePermutation singlePermutation;
-        public PermutationPage()
+        CipherDES dES;
+        public DESPage()
         {
             InitializeComponent();
-            singlePermutation = new SinglePermutation();
+            dES = new CipherDES();
         }
 
         private void Crypt_Btn_Click(object sender, RoutedEventArgs e)
@@ -37,22 +37,19 @@ namespace TZI
             }
             else
             {
-                string inKey = Key_Tb.Text;
-                string[] token = inKey.Split(' ');
-                for (int i = 0; i < token.Length; i++)
-                {
-                    for (int j = i + 1; j < token.Length; j++)
-                    {
-                        if (token[i] == token[j])
-                            return;
-                    }
-                }
-
-                singlePermutation.setKey(Key_Tb.Text);
+                string[] result = new string[2];
                 if (Encrypt_Rbtn.IsChecked == true)
-                    Output_Tb.Text = singlePermutation.Encrypt(Input_Tb.Text);
+                {
+                    result = dES.Encrypt(Input_Tb.Text, Key_Tb.Text);
+                    Key_Tb.Text = result[0];
+                    Output_Tb.Text = result[1];
+                }
                 else if (Decrypt_Rbtn.IsChecked == true)
-                    Output_Tb.Text = singlePermutation.Decrypt(Input_Tb.Text);
+                {
+                    result = dES.Decrypt(Input_Tb.Text, Key_Tb.Text);
+                    Key_Tb.Text = result[0];
+                    Output_Tb.Text = result[1];
+                }
                 else
                     MessageBox.Show("Выберите расшифрование или зашифрование");
             }

@@ -9,14 +9,24 @@ namespace TZI
 {
     class CipherRSA
     {
-        char[] characters = new char[] { '#', 'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И',
+        /*char[] characters = new char[] { '#', 'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И',
                                                         'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С',
                                                         'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ь', 'Ы', 'Ъ',
-                                                        'Э', 'Ю', 'Я', ' ', '1', '2', '3', '4', '5', '6', '7',
-                                                        '8', '9', '0' };
+                                                        'Э', 'Ю', 'Я', 'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з',
+                                                        'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т',
+                                                        'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ь', 'ы',
+                                                        'ъ', 'э', 'ю', 'я', ' ',
+                                                        '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
+                                                        ',', '.' };*/
+
+        char[] characters = new char[] { '#', ',', '.', 'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И',
+                                                'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С',
+                                                'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ь', 'Ы', 'Ъ',
+                                                'Э', 'Ю', 'Я', ' ', '1', '2', '3', '4', '5', '6', '7',
+                                                '8', '9', '0' };
 
         //проверка: простое ли число?
-        private bool IsTheNumberSimple(long n)
+        public bool IsTheNumberSimple(long n)
         {
             if (n < 2)
                 return false;
@@ -32,9 +42,9 @@ namespace TZI
         }
 
         //зашифровать
-        private List<string> RSA_Endoce(string s, long e, long n)
+        private string RSA_Encode(string s, long e, long n)
         {
-            List<string> result = new List<string>();
+            string result = "";
 
             BigInteger bi;
 
@@ -49,14 +59,17 @@ namespace TZI
 
                 bi = bi % n_;
 
-                result.Add(bi.ToString());
+                if (i != s.Length - 1)
+                    result += bi.ToString() + " ";
+                else
+                    result += bi.ToString();
             }
 
             return result;
         }
 
         //расшифровать
-        private string RSA_Dedoce(List<string> input, long d, long n)
+        private string RSA_Decode(string[] input, long d, long n)
         {
             string result = "";
 
@@ -108,6 +121,34 @@ namespace TZI
             }
 
             return e;
+        }
+
+        public string[] Encrypt(string input, long p, long q)
+        {
+            string[] result = new string[3];
+
+            string s = input;
+
+            s = s.ToUpper();
+            
+            long n = p * q;
+            long m = (p - 1) * (q - 1);
+            long d = Calculate_d(m);
+            long e_ = Calculate_e(d, m);
+
+            result[0] = RSA_Encode(s, e_, n);
+
+            result[1] = d.ToString();
+            result[2] = n.ToString();
+
+            return result;
+        }
+
+        public string Decrypt(string[] input, long d, long n)
+        {
+            string result = RSA_Decode(input, d, n);
+
+            return result;
         }
     }
 }

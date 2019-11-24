@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -60,6 +61,9 @@
     </Compile>
     <Compile Include="CipherDSE.cs" />
     <Compile Include="CipherRSA.cs" />
+    <Compile Include="DESPage.xaml.cs">
+      <DependentUpon>DESPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GamuvannaPage.xaml.cs">
       <DependentUpon>GamuvannaPage.xaml</DependentUpon>
     </Compile>
@@ -74,9 +78,16 @@
     <Compile Include="ReplacementPage.xaml.cs">
       <DependentUpon>ReplacementPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RSAPage.xaml.cs">
+      <DependentUpon>RSAPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RLECoder.cs" />
     <Compile Include="SinglePermutation.cs" />
     <Compile Include="Vishener.cs" />
+    <Page Include="DESPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DataCompressingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -106,6 +117,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ReplacementPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RSAPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
