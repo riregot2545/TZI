@@ -56,10 +56,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CipherDES.cs" />
     <Compile Include="DataCompressingPage.xaml.cs">
       <DependentUpon>DataCompressingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CipherDSE.cs" />
     <Compile Include="CipherRSA.cs" />
     <Compile Include="DESPage.xaml.cs">
       <DependentUpon>DESPage.xaml</DependentUpon>
