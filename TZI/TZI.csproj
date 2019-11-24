@@ -38,6 +38,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -67,11 +68,15 @@
     <Compile Include="GamuvannaPage.xaml.cs">
       <DependentUpon>GamuvannaPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HashPage.xaml.cs">
+      <DependentUpon>HashPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IntegrityСheckPage.xaml.cs">
       <DependentUpon>IntegrityСheckPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="LunSimple.cs" />
     <Compile Include="ModueSum.cs" />
+    <Compile Include="PermutationHash.cs" />
     <Compile Include="PermutationPage.xaml.cs">
       <DependentUpon>PermutationPage.xaml</DependentUpon>
     </Compile>
@@ -93,6 +98,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GamuvannaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HashPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
